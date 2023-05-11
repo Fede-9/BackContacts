@@ -1,0 +1,4 @@
+export const SIGNATURE_STATUS = {
+    APROBADO: 1,
+    DESAPROBADO: 2
+}

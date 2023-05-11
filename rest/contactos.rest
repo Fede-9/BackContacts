@@ -1,0 +1,31 @@
+###
+
+GET http://localhost:3000/contactos
+
+###
+
+GET http://localhost:3000/contactos/1
+
+###
+POST http://localhost:3000/contactos
+Content-Type: application/json
+
+{
+  
+    "name": "Lucas",
+    "phone": "518185"
+
+}
+
+###
+DELETE http://localhost:3000/contactos/2
+
+###
+PUT http://localhost:3000/contactos/3
+Content-Type: application/json
+
+{
+    "name": "Messi",
+    "phone": "hdbshjbhv"
+  
+}

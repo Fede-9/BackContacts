@@ -1,0 +1,27 @@
+--- Crear proyecto vacio ---
+npx sequelize-cli init
+--- Crear Modelo ----
+npx sequelize-cli model:generate --name user --attributes firstName:string,lastName:string,email:string, etc...
+--- Migrar modelo ---
+npx sequelize-cli db:migrate
+--- Volver al estado anterior ---
+npx sequelize-cli db:migrate:undo
+--- Volver al estado inicial deshaciendo todas las migraciones ---
+db:migrate:undo:all
+--- También puede volver a una migración específica pasando su nombre con la --to opción
+npx sequelize-cli db:migrate:undo:all --to XXXXXXXXXXXXXX-create-user.js
+--- Crear semilla ----
+npx sequelize-cli seed:generate --name usuarios_iniciales
+--- Insertar semillas ala db -----
+npx sequelize-cli db:seed:all
+--- Si desea deshacer la semilla más reciente: ---
+npx sequelize-cli db:seed:undo
+---- Si desea deshacer una semilla específica: ---
+npx sequelize-cli db:seed:undo --seed name-of-seed-as-in-data
+---- Si desea deshacer todas las semillas: ---
+npx sequelize-cli db:seed:undo:all
+
+
+---- TEST ------
+npx jest
+npm run test

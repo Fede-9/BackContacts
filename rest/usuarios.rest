@@ -1,0 +1,47 @@
+###
+
+GET http://localhost:3000/usuarios
+
+###
+
+GET http://localhost:3000/usuarios/3
+
+###
+#login usuario
+POST http://localhost:3000/usuarios/login
+Content-Type: application/json
+
+{
+  
+    "name": "Palermo",
+    "email": "lucas@gmail.com",
+    "pass": "palermo123"
+
+    
+}
+
+###
+POST http://localhost:3000/usuarios
+Content-Type: application/json
+
+{
+  
+    "name": "Cristiano",
+    "email": "cristiano@gmail.com",
+    "pass": "777"
+    
+}
+
+###
+DELETE http://localhost:3000/usuarios/2
+
+###
+PUT http://localhost:3000/usuarios/1
+Content-Type: application/json
+
+{
+    "name": "Fede",
+    "email": "fede@gmail.com",
+    "pass": "fede"
+  
+}
