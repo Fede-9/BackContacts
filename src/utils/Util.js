@@ -1,11 +1,26 @@
-// Archivo de funcionalidades
+import { User } from '../../models'
 
-function sum(a, b) {
-    return parseInt(a) + parseInt(b)
+ 
+async function removeAllUser(){
+    await User.destroy({
+        truncate: true
+    })
+}
+
+async function existUser(id){
+    const user = await User.findOne({
+        where: {
+            name
+        }
+    })
+
+    return user != undefined && user != null
 }
 
 
-// CommonJS
+
+
 module.exports = {
-    sum
+    removeAllUser,
+    existUser
 }

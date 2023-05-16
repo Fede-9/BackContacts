@@ -16,7 +16,6 @@ Content-Type: application/json
     "name": "Palermo",
     "email": "lucas@gmail.com",
     "pass": "palermo123"
-
     
 }
 

@@ -4,6 +4,5 @@ package-lock.json
 
 # Sequelize
 /config/config.json
+/config/database.js
 
-# Environment variables
-.env
