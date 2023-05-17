@@ -16,4 +16,3 @@ router["delete"]('/:id', deleteUsuario);
 router.put('/:id', updateUsuario);
 router.post('/login', login);
 module.exports = router;
-// export default router;

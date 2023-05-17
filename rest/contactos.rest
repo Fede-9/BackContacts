@@ -4,7 +4,7 @@ GET http://localhost:3000/contactos
 
 ###
 
-GET http://localhost:3000/contactos/1
+GET http://localhost:3000/contactos/2
 
 ###
 POST http://localhost:3000/contactos

@@ -17,4 +17,3 @@ router.put('/:id', updateContacto)
 
 
 module.exports = router;
-// export default router;

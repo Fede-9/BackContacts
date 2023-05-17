@@ -4,5 +4,9 @@ package-lock.json
 
 # Sequelize
 /config/config.json
-/config/database.js
+
+
+# Docker compose
+docker-compose.yml
+
 

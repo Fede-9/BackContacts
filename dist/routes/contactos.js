@@ -14,4 +14,3 @@ router.post('/', addContacto);
 router["delete"]('/:id', deleteContacto);
 router.put('/:id', updateContacto);
 module.exports = router;
-// export default router;
