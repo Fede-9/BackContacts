@@ -1,10 +1,13 @@
 ###
 
 GET http://localhost:3000/usuarios
+Authorization: Bearer 
+
 
 ###
 
 GET http://localhost:3000/usuarios/3
+Authorization: Bearer 
 
 ###
 #login usuario
@@ -25,17 +28,19 @@ Content-Type: application/json
 
 {
   
-    "name": "Cristiano",
-    "email": "cristiano@gmail.com",
-    "pass": "777"
+    "name": "Guido",
+    "email": "guido@gmail.com",
+    "pass": "123"
     
 }
 
 ###
-DELETE http://localhost:3000/usuarios/2
+DELETE http://localhost:3000/usuarios/10
+Authorization: Bearer 
 
 ###
 PUT http://localhost:3000/usuarios/1
+Authorization: Bearer 
 Content-Type: application/json
 
 {

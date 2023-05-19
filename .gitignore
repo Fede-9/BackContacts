@@ -4,9 +4,3 @@ package-lock.json
 
 # Sequelize
 /config/config.json
-
-
-# Docker compose
-docker-compose.yml
-
-

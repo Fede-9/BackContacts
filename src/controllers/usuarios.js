@@ -27,14 +27,15 @@ const login = async (req, res) => {
     let login = false
 
     if (onename){
-        login = await compararHash(pass, onename.pass)
-        
+        login = await compararHash(pass, onename.pass)   
     }
-    return res.json({info:'OK', data:onename, login})
+
+    const token = generatetoken(email)
+    // const decode = decodeToken(token)
+
+    return res.json({info:'OK', data:onename, login, token})
 
 }
-
-
 
 
 
@@ -125,3 +126,6 @@ module.exports = {
     updateUsuario,
     login
 }
+
+
+  

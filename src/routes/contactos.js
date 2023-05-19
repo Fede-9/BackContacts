@@ -1,18 +1,18 @@
 const express = require('express')
 const router = express.Router()
 const { getContacto, getContactoById, addContacto, deleteContacto, updateContacto } = require('../controllers/contactos')
+const {  validateUser } = require('../controllers/verifyUser.js')
 
 
+router.get('/', validateUser, getContacto);
 
-router.get('/', getContacto);
-
-router.get('/:id', getContactoById)
+router.get('/:id', validateUser, getContactoById)
 
 router.post('/', addContacto)
 
-router.delete('/:id', deleteContacto)
+router.delete('/:id', validateUser, deleteContacto)
 
-router.put('/:id', updateContacto)
+router.put('/:id', validateUser, updateContacto)
 
 
 

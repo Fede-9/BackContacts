@@ -3,19 +3,19 @@ const jwt = require('jsonwebtoken')
 const CLAVE_PRIVADA = 'claveSecreta'
 const TOKEN_EXPIRATION = '24h'
 
-const payload = {
-    user: 'info@itecriocuarto.org'
-}
+// const payload = {
+//     user: 'info@itecriocuarto.org'
+// }
 
 
 
 // generar el token
 const generatetoken = (payload) => { 
 
-    return jwt.sign(payload, CLAVE_PRIVADA, {expiresIn: TOKEN_EXPIRATION})
+    return jwt.sign({payload}, CLAVE_PRIVADA, {expiresIn: TOKEN_EXPIRATION})
 }
 
-let token = generatetoken(payload)
+// let token = generatetoken(payload)
 // console.log(token)
 
 

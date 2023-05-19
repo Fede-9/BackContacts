@@ -1,10 +1,13 @@
 ###
 
 GET http://localhost:3000/contactos
+Authorization: Bearer 
 
 ###
 
 GET http://localhost:3000/contactos/2
+Authorization: Bearer 
+
 
 ###
 POST http://localhost:3000/contactos
@@ -19,9 +22,12 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/contactos/2
+Authorization: Bearer 
+
 
 ###
 PUT http://localhost:3000/contactos/3
+Authorization: Bearer 
 Content-Type: application/json
 
 {

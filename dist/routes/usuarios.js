@@ -9,10 +9,12 @@ var _require = require('../controllers/usuarios'),
   deleteUsuario = _require.deleteUsuario,
   updateUsuario = _require.updateUsuario,
   login = _require.login;
-router.get('/', getUsuario);
-router.get('/:id', getUsuarioById);
+var _require2 = require('../controllers/verifyUser.js'),
+  validateUser = _require2.validateUser;
+router.get('/', validateUser, getUsuario);
+router.get('/:id', validateUser, getUsuarioById);
 router.post('/', addUsuario);
-router["delete"]('/:id', deleteUsuario);
-router.put('/:id', updateUsuario);
+router["delete"]('/:id', validateUser, deleteUsuario);
+router.put('/:id', validateUser, updateUsuario);
 router.post('/login', login);
 module.exports = router;

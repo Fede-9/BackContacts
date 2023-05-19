@@ -13,7 +13,7 @@ var _require = require('../../models'),
 // seguir con login
 var login = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(req, res) {
-    var _req$body, name, email, pass, validate, onename, login;
+    var _req$body, name, email, pass, validate, onename, login, token;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -47,12 +47,14 @@ var login = /*#__PURE__*/function () {
         case 13:
           login = _context.sent;
         case 14:
+          token = (0, _index.generatetoken)(email); // const decode = decodeToken(token)
           return _context.abrupt("return", res.json({
             info: 'OK',
             data: onename,
-            login: login
+            login: login,
+            token: token
           }));
-        case 15:
+        case 16:
         case "end":
           return _context.stop();
       }
