@@ -7,7 +7,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var _require = require('../../models'),
   sequelize = _require.sequelize,
   Sequelize = _require.Sequelize,
-  Contact = _require.contact;
+  Contact = _require.contact,
+  User = _require.user;
 var getContacto = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(req, res) {
     var lista;
@@ -55,32 +56,59 @@ var getContactoById = /*#__PURE__*/function () {
 }();
 var addContacto = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(req, res) {
-    var body, verificado, contacto;
+    var _req$body, name, phone, userId, user, contacto;
     return _regeneratorRuntime().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          body = req.body;
-          verificado = body.name;
-          if (verificado) {
-            _context3.next = 4;
+          _req$body = req.body, name = _req$body.name, phone = _req$body.phone, userId = _req$body.userId;
+          if (!(!name || !userId)) {
+            _context3.next = 3;
             break;
           }
           return _context3.abrupt("return", res.status(400).json({
-            info: 'parametro incorrectos'
+            info: 'parámetros incorrectos'
           }));
-        case 4:
+        case 3:
+          _context3.prev = 3;
           _context3.next = 6;
-          return Contact.create(body);
+          return User.findOne({
+            where: {
+              id: userId
+            }
+          });
         case 6:
+          user = _context3.sent;
+          if (user) {
+            _context3.next = 9;
+            break;
+          }
+          return _context3.abrupt("return", res.status(404).json({
+            info: 'ID de usuario no encontrado'
+          }));
+        case 9:
+          _context3.next = 11;
+          return Contact.create({
+            name: name,
+            phone: phone,
+            userId: userId
+          });
+        case 11:
           contacto = _context3.sent;
           return _context3.abrupt("return", res.status(201).json({
             data: contacto
           }));
-        case 8:
+        case 15:
+          _context3.prev = 15;
+          _context3.t0 = _context3["catch"](3);
+          console.error('Error al agregar el contacto:', _context3.t0);
+          return _context3.abrupt("return", res.status(500).json({
+            info: 'Error interno del servidor'
+          }));
+        case 19:
         case "end":
           return _context3.stop();
       }
-    }, _callee3);
+    }, _callee3, null, [[3, 15]]);
   }));
   return function addContacto(_x5, _x6) {
     return _ref3.apply(this, arguments);

@@ -4,7 +4,12 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class user extends Model {
+
+
     static associate(models) {
+      
+      // relacion
+      user.hasMany(models.contact)
     }
   }
   user.init({

@@ -1,4 +1,4 @@
-const { sequelize, Sequelize, contact: Contact } = require('../../models');
+const { sequelize, Sequelize, contact: Contact, user: User } = require('../../models');
 
 
 
@@ -17,21 +17,32 @@ const getContactoById = async (req, res) => {
 
 
 
+
 const addContacto = async (req, res) => {
-    let body = req.body; 
+    let { name, phone, userId } = req.body;
 
-    let verificado = body.name;
-
-    if (!verificado){
-        return res.status(400).json({info: 'parametro incorrectos'})
+    if (!name || !userId) {
+        return res.status(400).json({ info: 'parámetros incorrectos' });
     }
 
-    const contacto = await Contact.create(body)
+    try {
+        const user = await User.findOne({ where: { id: userId  } });
+        if (!user) {
+            return res.status(404).json({ info: 'ID de usuario no encontrado' });
+        }
 
-    return res.status(201).json({
-        data: contacto
-    })
-}
+        const contacto = await Contact.create({ name, phone, userId });
+
+        return res.status(201).json({
+            data: contacto
+        });
+    } catch (error) {
+        console.error('Error al agregar el contacto:', error);
+        return res.status(500).json({ info: 'Error interno del servidor' });
+    }
+};
+
+
 
 const deleteContacto = async (req, res) => {
     const { id } = req.params;

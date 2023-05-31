@@ -15,14 +15,15 @@ Content-Type: application/json
 
 {
   
-    "name": "Lucas",
-    "phone": "518185"
+    "name": "Martin",
+    "phone": "12345",
+    "userId": 2
 
 }
 
 ###
-DELETE http://localhost:3000/contactos/2
-Authorization: Bearer 
+DELETE http://localhost:3000/contactos/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg0NzYzNDY0LCJleHAiOjE2ODQ4NDk4NjR9.CT39mY_k2HYS5bqpA31T8Uc-OoTd4sNv0tyTtIsyxJo
 
 
 ###

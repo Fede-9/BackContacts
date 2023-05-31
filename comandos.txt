@@ -7,7 +7,7 @@ npx sequelize-cli db:migrate
 --- Volver al estado anterior ---
 npx sequelize-cli db:migrate:undo
 --- Volver al estado inicial deshaciendo todas las migraciones ---
-db:migrate:undo:all
+npx db:migrate:undo:all
 --- También puede volver a una migración específica pasando su nombre con la --to opción
 npx sequelize-cli db:migrate:undo:all --to XXXXXXXXXXXXXX-create-user.js
 --- Crear semilla ----

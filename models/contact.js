@@ -10,14 +10,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+
+      // relacion
+      contact.belongsTo(models.user)
     }
   }
   contact.init({
     name: DataTypes.STRING,
     phone: DataTypes.STRING,
     date: DataTypes.DATE,
-    favourite: DataTypes.BOOLEAN
+    favourite: DataTypes.BOOLEAN,
   }, {
     sequelize,
     modelName: 'contact',

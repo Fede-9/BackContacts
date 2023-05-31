@@ -20,6 +20,7 @@ module.exports = {
       },
       date: {
         type: Sequelize.DATE
+      
       },
       favourite: {
         type: Sequelize.BOOLEAN,
