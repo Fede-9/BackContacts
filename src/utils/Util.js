@@ -1,13 +1,14 @@
 import { User } from '../../models'
 
- 
+
 async function removeAllUser(){
     await User.destroy({
-        truncate: true
+            truncate: true
     })
 }
 
-async function existUser(id){
+
+async function existUser(name){
     const user = await User.findOne({
         where: {
             name

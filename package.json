@@ -12,7 +12,7 @@
     "seed:undo": "npx sequelize-cli db:seed:undo",
     "migration": "npx sequelize-cli db:migrate",
     "migration:undo": "npx sequelize-cli db:migrate:undo",
-    "test": "cross-env NODE_ENV=test npx sequelize-cli db:create & cross-env NODE_ENV=test npx sequelize-cli db:migrate & jest --verbose --runInBand --detectOpenHandles"
+    "test": "cross-env NODE_ENV=test npx sequelize-cli db:create && cross-env NODE_ENV=test npx sequelize-cli db:migrate && jest --verbose --runInBand --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
