@@ -19,10 +19,18 @@ var getContacto = /*#__PURE__*/function () {
           return Contact.findAll({});
         case 2:
           lista = _context.sent;
+          if (!(lista.length === 0)) {
+            _context.next = 5;
+            break;
+          }
+          return _context.abrupt("return", res.json({
+            message: 'No hay contactos disponibles'
+          }));
+        case 5:
           return _context.abrupt("return", res.json({
             data: lista
           }));
-        case 4:
+        case 6:
         case "end":
           return _context.stop();
       }
@@ -43,8 +51,16 @@ var getContactoById = /*#__PURE__*/function () {
           return Contact.findByPk(id);
         case 3:
           contacto = _context2.sent;
+          if (contacto) {
+            _context2.next = 6;
+            break;
+          }
+          return _context2.abrupt("return", res.status(404).json({
+            message: 'El contacto no existe'
+          }));
+        case 6:
           return _context2.abrupt("return", res.json(contacto));
-        case 5:
+        case 7:
         case "end":
           return _context2.stop();
       }

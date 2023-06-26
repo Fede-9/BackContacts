@@ -74,10 +74,18 @@ var getUsuario = /*#__PURE__*/function () {
           return User.findAll({});
         case 2:
           lista = _context2.sent;
+          if (!(lista.length === 0)) {
+            _context2.next = 5;
+            break;
+          }
+          return _context2.abrupt("return", res.json({
+            message: 'No hay usuarios disponibles'
+          }));
+        case 5:
           return _context2.abrupt("return", res.json({
             data: lista
           }));
-        case 4:
+        case 6:
         case "end":
           return _context2.stop();
       }
@@ -98,8 +106,16 @@ var getUsuarioById = /*#__PURE__*/function () {
           return User.findByPk(id);
         case 3:
           usuario = _context3.sent;
+          if (usuario) {
+            _context3.next = 6;
+            break;
+          }
+          return _context3.abrupt("return", res.status(404).json({
+            message: 'El usuario no existe'
+          }));
+        case 6:
           return _context3.abrupt("return", res.json(usuario));
-        case 5:
+        case 7:
         case "end":
           return _context3.stop();
       }
