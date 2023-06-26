@@ -40,16 +40,28 @@ const login = async (req, res) => {
 
 
 const getUsuario = async (req, res) => {
-    const lista = await User.findAll({})
-    return res.json({data:lista})
-}
+    const lista = await User.findAll({});
+
+    if (lista.length === 0) {
+        return res.json({ message: 'No hay usuarios disponibles' });
+    }
+
+    return res.json({ data: lista });
+};
+
 
 
 const getUsuarioById = async (req, res) => {
     const { id } = req.params;
-    const usuario = await User.findByPk(id)
-    return res.json(usuario)
-}
+    const usuario = await User.findByPk(id);
+
+    if (!usuario) {
+        return res.status(404).json({ message: 'El usuario no existe' });
+    }
+
+    return res.json(usuario);
+};
+
 
 const addUsuario = async (req, res) => {
 

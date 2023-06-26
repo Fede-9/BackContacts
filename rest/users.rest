@@ -1,8 +1,7 @@
 ###
 
 GET http://localhost:3000/usuarios
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg3NTQzNjM2LCJleHAiOjE2ODc2MzAwMzZ9.ZR_cAbeY7vAlDSQq5D0nYaKvj1ATMviKYiZAUEHr7is
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg3Nzk1NTg5LCJleHAiOjE2ODc4ODE5ODl9.XJbqoJFVN-W3Y8n1kvY5KvlDTVLN5bAvBdIi8OQhXyY
 
 ###
 
@@ -39,13 +38,13 @@ DELETE http://localhost:3000/usuarios/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg0NzYzNDY0LCJleHAiOjE2ODQ4NDk4NjR9.CT39mY_k2HYS5bqpA31T8Uc-OoTd4sNv0tyTtIsyxJo
 
 ###
-PUT http://localhost:3000/usuarios/4
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg3NTQzNjM2LCJleHAiOjE2ODc2MzAwMzZ9.ZR_cAbeY7vAlDSQq5D0nYaKvj1ATMviKYiZAUEHr7is
+PUT http://localhost:3000/usuarios/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjoibWVzc2lAZ21haWwuY29tIiwiaWF0IjoxNjg3Nzk1NTg5LCJleHAiOjE2ODc4ODE5ODl9.XJbqoJFVN-W3Y8n1kvY5KvlDTVLN5bAvBdIi8OQhXyY
 Content-Type: application/json
 
 {
-    "name": "Roaldoo",
-    "email": "ronaldo@gmail.com",
+    "name": "Guidoooo",
+    "email": "guido@gmail.com",
     "pass": "ronaldo"
   
 }

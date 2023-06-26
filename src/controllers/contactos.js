@@ -4,16 +4,26 @@ const { sequelize, Sequelize, contact: Contact, user: User } = require('../../mo
 
 
 const getContacto = async (req, res) => {
-    const lista = await Contact.findAll({})
-    return res.json({data:lista})
-}
+    const lista = await Contact.findAll({});
+
+    if (lista.length === 0) {
+        return res.json({ message: 'No hay contactos disponibles' });
+    }
+
+    return res.json({ data: lista });
+};
 
 
 const getContactoById = async (req, res) => {
     const { id } = req.params;
-    const contacto = await Contact.findByPk(id)
-    return res.json(contacto)
-}
+    const contacto = await Contact.findByPk(id);
+
+    if (!contacto) {
+        return res.status(404).json({ message: 'El contacto no existe' });
+    }
+
+    return res.json(contacto);
+};
 
 
 
